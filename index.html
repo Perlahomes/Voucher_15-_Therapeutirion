@@ -29,6 +29,8 @@
       display: flex;
       background: linear-gradient(135deg, #20242a 60%, transparent 60%);
       position: relative;
+      /* Keep row layout on all sizes */
+      flex-direction: row;
     }
 
     .voucher .left,
@@ -193,6 +195,70 @@
       height: 100%;
       border: 0;
     }
+
+    /* Responsive styles for phones - keep row but scale */
+    @media (max-width: 480px) {
+      body {
+        padding: 15px;
+      }
+
+      .voucher-wrapper {
+        max-width: 100%;
+        width: 100%;
+      }
+
+      .voucher {
+        /* Keep row */
+        flex-direction: row;
+        box-shadow: 0 0 6px rgba(0,0,0,0.5);
+        font-size: 14px; /* base smaller font */
+      }
+
+      .voucher .left,
+      .voucher .right {
+        padding: 15px;
+        flex: 0 0 45%; /* fix width to 45% each, total ~90% + gap */
+        max-width: 45%;
+      }
+
+      .voucher .left .big-discount {
+        font-size: 40px;
+        margin-top: 30px;
+      }
+
+      .voucher .right .discount-text {
+        font-size: 20px;
+      }
+
+      .voucher.alt .right .discount-text {
+        font-size: 22px;
+      }
+
+      .voucher .right .slogan {
+        font-size: 12px;
+      }
+
+      .voucher .right p {
+        font-size: 11px;
+      }
+
+      .voucher .right .contact {
+        font-size: 11px;
+        gap: 10px;
+      }
+
+      /* TripAdvisor banner smaller */
+      .tripadvisor-banner {
+        max-width: 160px;
+        padding: 8px 10px;
+      }
+
+      /* Map container scales */
+      .map-container {
+        width: 100%;
+        height: 200px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -211,7 +277,6 @@
         </div>
         <div class="contact">
           <span>📞 2721093391</span>
-          
         </div>
       </div>
     </div>
@@ -227,7 +292,6 @@
         <p>Παραδοσιακή ελληνική κουζίνα. Πολλά πιάτα για κάθε γούστο, όπως σαλάτες, τυριά, ορεκτικά και κρέας ή θαλασσινά.</p>
         <div class="contact">
           <span>📞 2721093391</span>
-        
         </div>
       </div>
     </div>
