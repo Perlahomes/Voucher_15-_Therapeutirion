@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Discount Vouchers with TripAdvisor and Map</title>
+  <style>
+    body {
+      background-color: #080808;
+      font-family: 'Arial', sans-serif;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .voucher-wrapper {
+      max-width: 480px;
+      width: 100%;
+    }
+
+    .voucher {
+      width: 100%;
+      color: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,0,0,0.7);
+      display: flex;
+      background: linear-gradient(135deg, #20242a 60%, transparent 60%);
+      position: relative;
+    }
+
+    .voucher .left,
+    .voucher .right {
+      padding: 25px;
+      flex: 1;
+    }
+
+    .voucher .left {
+      background: url(images/menu.jpg) no-repeat center/cover;
+      position: relative;
+    }
+
+    .voucher .left .big-discount {
+      font-size: 72px;
+      font-weight: 700;
+      line-height: 1;
+      margin-top: 100px;
+      color: #81b42d;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+    }
+
+    .voucher .right {
+      background: #20242a;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .voucher .right .discount-text {
+      font-size: 32px;
+      font-weight: 700;
+      color: white;
+    }
+
+    .voucher .right .discount-text .highlight {
+      color: #f5a623;
+    }
+
+    .voucher .right .slogan {
+      font-size: 14px;
+      color: #a9a9a9;
+      margin-top: 5px;
+      margin-bottom: 20px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+    }
+
+    .voucher .right p {
+      font-size: 12px;
+      line-height: 1.4;
+      color: #bbb;
+    }
+
+    .voucher .right .contact {
+      margin-top: 20px;
+      font-size: 12px;
+      color: #999;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .voucher .right .contact span {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    /* Second voucher */
+    .voucher.alt {
+      background: linear-gradient(135deg, #a46a38 50%, #2b2d31 50%);
+    }
+
+    .voucher.alt .left {
+      background: url(images/delicious-plates.jpg) no-repeat center/cover;
+      padding: 25px;
+      flex: 1;
+    }
+
+    .voucher.alt .right {
+      padding: 25px 30px;
+      flex: 1;
+      background: #20242a;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .voucher.alt .right .discount-text {
+      font-size: 36px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 10px;
+    }
+
+    .voucher.alt .right .discount-text .highlight {
+      color: #81b42d;
+    }
+
+    .voucher.alt .right .slogan {
+      font-size: 14px;
+      color: #aaa;
+      margin-bottom: 20px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+    }
+
+    .voucher.alt .right p {
+      font-size: 12px;
+      line-height: 1.4;
+      color: #ccc;
+    }
+
+    .voucher.alt .right .contact {
+      margin-top: 20px;
+      font-size: 12px;
+      color: #bbb;
+    }
+
+    .voucher.alt .right .contact span {
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    /* TripAdvisor banner */
+    .tripadvisor-banner {
+      display: block;
+      max-width: 220px;
+      margin: 0 auto;
+      background: white;
+      padding: 10px 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s ease;
+      text-align: center;
+    }
+
+    .tripadvisor-banner img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .tripadvisor-banner:hover {
+      transform: scale(1.03);
+    }
+
+    /* Map */
+    .map-container {
+      margin-top: 40px;
+      width: 480px;
+      height: 240px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 0 8px rgba(0,0,0,0.6);
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Voucher 1 -->
+  <div class="voucher-wrapper">
+    <div class="voucher">
+      <div class="left">
+        <div class="big-discount">15%</div>
+      </div>
+      <div class="right">
+        <div>
+          <div class="discount-text"><span class="highlight">Discount</span> Voucher</div>
+          <div class="slogan">Therapeutirion Tsipouradiko</div>
+          <p>Traditional Greek cuzine.Many dishes with every taste including salads,cheese,appetizers and meat or sea food.</p>
+        </div>
+        <div class="contact">
+          <span>📞 2721093391</span>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Voucher 2 -->
+  <div class="voucher-wrapper">
+    <div class="voucher alt">
+      <div class="left"></div>
+      <div class="right">
+        <div class="discount-text"><span class="highlight">Κουπόνι </span>Έκπτωσης</div>
+        <div class="slogan">Τσιπουράδικο Θεραπευτήριον</div>
+        <p>Παραδοσιακή ελληνική κουζίνα. Πολλά πιάτα για κάθε γούστο, όπως σαλάτες, τυριά, ορεκτικά και κρέας ή θαλασσινά.</p>
+        <div class="contact">
+          <span>📞 2721093391</span>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TripAdvisor logo banner -->
+  <a href="https://www.tripadvisor.com.gr/Restaurant_Review-g668020-d12946218-Reviews-Therapeutirion_Tsipouradiko-Kalamata_Messenia_Region_Peloponnese.html?m=69573" target="_blank" class="tripadvisor-banner" aria-label="Visit TripAdvisor">
+    <img src="images/tripadvisor-logo-icon-travel-website-free-vector.jpg" alt="TripAdvisor Logo" />
+  </a>
+
+  <!-- Map -->
+  <div class="map-container" aria-label="Map location">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3570.491713710475!2d22.107559876100066!3d37.03772705427368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1361b09baca29775%3A0x625371b692d4cc11!2zzpjOtc-BzrHPgM61z4XPhM6uz4HOuc6_zr0gzqTPg865z4DOv8-Fz4HOrM60zrnOus6_!5e1!3m2!1sel!2sgr!4v1753349545798!5m2!1sel!2sgr"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Google Map Location"
+    ></iframe>
+  </div>
+
+</body>
+</html>
